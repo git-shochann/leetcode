@@ -43,9 +43,10 @@ func DeleteDuplicate(strings []string) []string {
 	return unique
 }
 
+var regex = regexp.MustCompile(`[A-Z0-9]`) // 準備
+
 func CheckRegex(s string) bool {
-	regex := regexp.MustCompile(`[A-Z0-9]`) // 準備
-	ok := regex.MatchString(s)              // 判定
+	ok := regex.MatchString(s) // 判定
 	return ok
 }
 
