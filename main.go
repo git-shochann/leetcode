@@ -1,11 +1,10 @@
 package main
 
 import (
+	"coding-test/leetcode/array_hashing/contain_duplicate"
 	"fmt"
-	"leetcode/leetcode"
 )
 
 func main() {
-	// day1.goやday2.goの関数を呼び出す処理などを書く
-	fmt.Println(leetcode.ContainsDuplicate([]int{1, 2, 3, 1}))
+	fmt.Println(contain_duplicate.ContainsDuplicate([]int{1, 5, 7, 1}))
 }
