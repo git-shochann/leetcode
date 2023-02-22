@@ -1,10 +1,11 @@
 package main
 
 import (
-	"coding-test/leetcode/array_hashing/contain_duplicate"
+	"coding-test/leetcode/array_hashing/valid_anagram"
 	"fmt"
 )
 
 func main() {
-	fmt.Println(contain_duplicate.ContainsDuplicate([]int{1, 5, 7, 8, 9, 9}))
+	fmt.Println(valid_anagram.ValidAnagram("akb", "ske")) // trueを返す
+	// fmt.Println(valid_anagram.ValidAnagram("cat", "god")) // falseを返す
 }
