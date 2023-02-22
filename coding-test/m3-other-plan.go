@@ -1,4 +1,4 @@
-package main
+package codingtest
 
 // コードレビューでパフォーマンス的なところで指摘をいただけた
 
