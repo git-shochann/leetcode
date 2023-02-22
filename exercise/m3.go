@@ -28,19 +28,21 @@ func Solution(str string) int {
 	return count
 }
 
+// [M3 2000 sho tsuboya M3]
 func DeleteDuplicate(strings []string) []string {
+	// m[""]false が初期化した際の型
+	m := make(map[string]bool)
+
 	var unique []string
-	encounter := map[string]int{} // {"test1":1, "test2":2}
 	for _, v := range strings {
-		// v -> [M3 2000 sho tsuboya]
-		if _, ok := encounter[v]; !ok {
-			encounter[v] = 1
+		// m[v]がtrueでなければ = まだそのキーはないということ
+		if _, ok := m[v]; !ok {
+			m[v] = true
 			unique = append(unique, v)
-		} else {
-			encounter[v]++
 		}
 	}
 	return unique
+
 }
 
 var regex = regexp.MustCompile(`[A-Z0-9]`) // 準備
@@ -54,5 +56,5 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	text := scanner.Text()
-	fmt.Printf("Solution(text): %v\n", Solution(text))
+	fmt.Printf("Solution: %v\n", Solution(text))
 }
