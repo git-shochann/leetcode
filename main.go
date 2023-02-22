@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(contain_duplicate.ContainsDuplicate([]int{1, 5, 7, 1}))
+	fmt.Println(contain_duplicate.ContainsDuplicate([]int{1, 5, 7, 8, 9, 9}))
 }
