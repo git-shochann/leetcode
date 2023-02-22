@@ -11,7 +11,7 @@ import (
 var count int
 
 // アルファベット多文字 or 数字から始まる単語が何種類あるか
-func Solution(str string) int {
+func solution(str string) int {
 
 	slice := strings.Split(str, " ")
 	fmt.Printf("slice: %v\n", slice)
@@ -56,5 +56,5 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	text := scanner.Text()
-	fmt.Printf("Solution: %v\n", Solution(text))
+	fmt.Printf("solution: %v\n", solution(text))
 }
