@@ -11,7 +11,5 @@ func ValidAnagram(s, t string) bool {
 		fmt.Println("長さがまず同一ではないです")
 		return false
 	}
-}
 
-// 文字列を1つずつ確認するには、文字列をruneのスライスに変換する
-// runeは、UTF-8エンコードされたUnicode文字列を表す
+}
