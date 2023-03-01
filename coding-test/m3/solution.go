@@ -1,9 +1,7 @@
-package codingtest
+package m3
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"regexp"
 	"strings"
 )
@@ -11,7 +9,7 @@ import (
 var count int
 
 // アルファベット多文字 or 数字から始まる単語が何種類あるか
-func solution(str string) int {
+func Solution(str string) int {
 
 	slice := strings.Split(str, " ")
 	fmt.Printf("slice: %v\n", slice)
@@ -50,11 +48,4 @@ var regex = regexp.MustCompile(`[A-Z0-9]`) // 準備
 func CheckRegex(s string) bool {
 	ok := regex.MatchString(s) // 判定
 	return ok
-}
-
-func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	text := scanner.Text()
-	fmt.Printf("solution: %v\n", solution(text))
 }

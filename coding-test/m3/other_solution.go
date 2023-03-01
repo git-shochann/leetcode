@@ -1,7 +1,8 @@
-package codingtest
+package m3
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -29,4 +30,21 @@ func OtherSolution() {
 
 	// 1つずつ、見ていく -> 重複があったらそれはカウントしない
 	words := map[string]struct{}{}
+	for scanner.Scan() {
+		word := scanner.Text()
+		if len(word) == 0 {
+			continue
+		}
+		c := word[0]
+		if 'A' <= c && c <= 'Z' || '0' <= c && c <= '9' {
+			words[word] = struct{}{}
+		}
+	}
+	if err := scanner.Err(); err != nil {
+		panic(err)
+	}
+	fmt.Printf("%d words", len(words))
+	for word := range words {
+		fmt.Println(word)
+	}
 }
