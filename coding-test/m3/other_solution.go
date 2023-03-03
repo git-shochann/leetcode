@@ -32,18 +32,17 @@ func OtherSolution() {
 	words := map[string]struct{}{}
 	for scanner.Scan() {
 		word := scanner.Text()
-		if len(word) == 0 {
-			continue
-		}
-		c := word[0]
-		if 'A' <= c && c <= 'Z' || '0' <= c && c <= '9' {
+		capital := word[0] // 単語の最初の文字を取得
+		if 'A' <= capital && capital <= 'Z' || '0' <= capital && capital <= '9' {
+			// 一致したらキーにその単語を、値は空にする
 			words[word] = struct{}{}
 		}
 	}
 	if err := scanner.Err(); err != nil {
 		panic(err)
 	}
-	fmt.Printf("%d words", len(words))
+	fmt.Printf("%d words\n\n", len(words))
+	// mapをfor range で回す
 	for word := range words {
 		fmt.Println(word)
 	}

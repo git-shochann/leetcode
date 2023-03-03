@@ -31,6 +31,9 @@ func DeleteDuplicate(strings []string) []string {
 	// m[""]false が初期化した際の型
 	m := make(map[string]bool)
 
+	// 一応map[string]struct{}{}の方がいいかもしれない 値にアクセスしなくてもいいので
+	// 詳細は # other_solution.goを参照
+
 	var unique []string
 	for _, v := range strings {
 		// m[v]がtrueでなければ = まだそのキーはないということ
