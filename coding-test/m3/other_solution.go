@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"unicode"
 )
 
 // コードレビューでパフォーマンス的なところで指摘をいただけた
@@ -32,9 +33,9 @@ func OtherSolution() {
 	words := map[string]struct{}{}
 	for scanner.Scan() {
 		word := scanner.Text()
-		capital := word[0] // 単語の最初の文字を取得
-		if 'A' <= capital && capital <= 'Z' || '0' <= capital && capital <= '9' {
-			// 一致したらキーにその単語を、値は空にする
+		capital := rune(word[0]) // runeで比較したいので変換する
+		if unicode.IsUpper(capital) || unicode.IsDigit(capital) {
+			// 一致したらキーにその単語を、値は空で設定する
 			words[word] = struct{}{}
 		}
 	}
