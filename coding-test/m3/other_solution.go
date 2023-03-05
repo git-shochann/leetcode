@@ -22,7 +22,7 @@ func OtherSolution() {
 	scanner.Split(func(data []byte, atEOF bool) (advance int, token []byte, err error) {
 		// 空白で区切る
 		for i := 0; i < len(data); i++ {
-			if data[i] == ' ' {
+			if data[i] == ' ' || data[i] == '.' {
 				return i + 1, data[:i], nil
 			}
 		}
