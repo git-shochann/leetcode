@@ -39,6 +39,11 @@ func DeleteDuplicate(strings []string) []string {
 
 	var unique []string
 	for _, v := range strings {
+		// 空の要素が含まれる場合があったらスルーする 最初の文字が空白だったり、ピリオドで終わった文章など
+		// どうしても空の要素が含まれる場合がある
+		if len(v) == 0 {
+			continue
+		}
 		// m[v]がtrueでなければ = まだそのキーはないということ
 		if _, ok := m[v]; !ok {
 			m[v] = true

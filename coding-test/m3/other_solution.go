@@ -18,7 +18,7 @@ import (
 func OtherSolution() {
 	scanner := bufio.NewScanner(os.Stdin)
 
-	// どのように区切るかの設定を行う
+	// Scan()内部で使用するために、どのように区切るかの設定を行う
 	scanner.Split(func(data []byte, atEOF bool) (advance int, token []byte, err error) {
 		// 空白で区切る
 		for i := 0; i < len(data); i++ {
@@ -29,10 +29,12 @@ func OtherSolution() {
 		return 0, data, bufio.ErrFinalToken
 	})
 
-	// 1つずつ、見ていく -> 重複があったらそれはカウントしない
 	words := map[string]struct{}{}
 	for scanner.Scan() {
 		word := scanner.Text()
+		fmt.Printf("word: %v\n", word)
+		// 空の要素が含まれる場合があったらスルーする 最初の文字が空白だったり、ピリオドで終わった文章など
+		// どうしても空の要素が含まれる場合がある
 		if len(word) == 0 {
 			continue
 		}
