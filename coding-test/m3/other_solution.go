@@ -33,6 +33,9 @@ func OtherSolution() {
 	words := map[string]struct{}{}
 	for scanner.Scan() {
 		word := scanner.Text()
+		if len(word) == 0 {
+			continue
+		}
 		capital := rune(word[0]) // runeで比較したいので変換する
 		if unicode.IsUpper(capital) || unicode.IsDigit(capital) {
 			// 一致したらキーにその単語を、値は空で設定する
